@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rose Day Celebration</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+      color: #4a2c2a;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      margin-top: 40px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff0000, #ff69b4, #ff0000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(255,0,0,0.6), 0 0 20px rgba(255,105,180,0.6);
+      animation: shimmer 3s infinite linear;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    p {
+      font-size: 1.3em;
+      margin: 20px auto;
+      max-width: 600px;
+      font-weight: bold;
+      color: #4a2c2a;
+      text-shadow: 1px 1px 4px #f5c6cb;
+    }
+
+    .rose {
+      font-size: 100px;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background: #b22222;
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 25px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .button:hover {
+      background: #8b0000;
+      transform: scale(1.1);
+    }
+
+    /* Burst roses */
+    .burst-rose {
+      position: absolute;
+      font-size: 24px;
+      font-weight: bold;
+      animation: burst 3s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes burst {
+      0% { transform: translate(0,0) scale(1); opacity: 1; }
+      100% { transform: translate(var(--x), var(--y)) scale(0.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🌹 Happy Rose Day Radha urf Payal 🌹</h1>
+  <p>Roses are timeless symbols of love, beauty, and affection. On this Rose Day, let’s celebrate the joy of giving and receiving roses as a gesture of heartfelt emotions. May the bond between Devar and Bhabhi become stronger and full of Masti</p>
+  <br>
+  <p> From: Sunny</p>
+  <div class="rose">🌹</div>
+  <br>
+  <button class="button" onclick="burstRoses()">Get Rose</button>
+
+  <script>
+    function burstRoses() {
+      for (let i = 0; i < 1000; i++) {
+        const rose = document.createElement("div");
+        rose.className = "burst-rose";
+        rose.textContent = "🌹";
+
+        // Random position near center
+        rose.style.left = window.innerWidth / 2 + "px";
+        rose.style.top = window.innerHeight / 2 + "px";
+
+        // Random trajectory
+        const x = (Math.random() - 0.5) * window.innerWidth * 2;
+        const y = (Math.random() - 0.5) * window.innerHeight * 2;
+        rose.style.setProperty("--x", x + "px");
+        rose.style.setProperty("--y", y + "px");
+
+        document.body.appendChild(rose);
+
+        // Remove after animation
+        setTimeout(() => {
+          rose.remove();
+        }, 3000);
+      }
+    }
+  </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rose Day Celebration</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+      color: #4a2c2a;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 40px;
+      color: #b22222;
+      text-shadow: 2px 2px #f5c6cb;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
+    .rose {
+      font-size: 100px;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background: #b22222;
+      color: white;
+      font-size: 1.1em;
+      border-radius: 25px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .button:hover {
+      background: #8b0000;
+      transform: scale(1.1);
+    }
+
+    /* Burst roses */
+    .burst-rose {
+      position: absolute;
+      font-size: 24px;
+      animation: burst 3s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes burst {
+      0% { transform: translate(0,0) scale(1); opacity: 1; }
+      100% { transform: translate(var(--x), var(--y)) scale(0.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🌹 Happy Rose Day Radha urf Payal🌹</h1>
+  <p>Roses are timeless symbols of love, beauty, and affection. On this Rose Day, let’s celebrate the joy of giving and receiving roses as a gesture of heartfelt emotions.</p>
+  <div class="rose">🌹</div>
+  <br>
+  <button class="button" onclick="burstRoses()">Get Rose</button>
+
+  <script>
+    function burstRoses() {
+      for (let i = 0; i < 1000; i++) {
+        const rose = document.createElement("div");
+        rose.className = "burst-rose";
+        rose.textContent = "Payal🌹Radha";
+
+        // Random position near center
+        rose.style.left = window.innerWidth / 2 + "px";
+        rose.style.top = window.innerHeight / 2 + "px";
+
+        // Random trajectory
+        const x = (Math.random() - 0.5) * window.innerWidth * 2;
+        const y = (Math.random() - 0.5) * window.innerHeight * 2;
+        rose.style.setProperty("--x", x + "px");
+        rose.style.setProperty("--y", y + "px");
+
+        document.body.appendChild(rose);
+
+        // Remove after animation
+        setTimeout(() => {
+          rose.remove();
+        }, 3000);
+      }
+    }
+  </script>
+</body>
+</html> -->
